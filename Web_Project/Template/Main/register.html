@@ -1,0 +1,43 @@
+{% extends 'Main/main.html' %}
+{% block body %}
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class=" col-10 col-md-8 col-lg-6 mb-5 px-4">
+            <div class="bg-white rounded shadow p-4">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <h5 class=" d-flex align-items-center">
+                        <i class="bi bi-person-fill fs-3 me-3"></i> User Registration
+                    </h5>
+                    <div class="mt-4">
+                        <label for="name" class="form-label" style="font-weight: 500;">Username</label><br>
+                        {{form.username}}
+                    </div>
+                    <div class="mt-4">
+                        <label for="email" class="form-label" style="font-weight: 500;">Email</label><br>
+                        {{form.email}}
+                    </div>
+                    <div class="mt-4">
+                        <label for="password" class="form-label" style="font-weight: 500;">Password</label><br>
+                        {{form.password1}}
+                    </div>
+                    <div class="mt-4">
+                        <label for="Confirmpassword" class="form-label" style="font-weight: 500;">Confirm
+                            Password</label><br>
+                        {{form.password2}}
+                    </div>
+                    {{form.errors}}
+                    <div class="d-flex align-items-center justify-content-between mt-4">
+                        <button type="submit" class="btn btn-success shadow-none">Register</button>
+                        <p class="text-center text-muted mt-3">Have already an account? <a href="{% url 'Login' %}">Login here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                  
+              
+{% endblock body %}

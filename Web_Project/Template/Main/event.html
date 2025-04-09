@@ -1,0 +1,29 @@
+{% extends 'Main/main.html' %}
+{% block body %}
+<div class="mt-4">
+    <h2 class="fw-bold text-center h-font">Events</h2>
+</div>
+<div class="container-fluid px-5">
+    <div class="row justify-content-between">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for event in events %}
+            <div class="col">
+                <div class="card h-100">
+                    {% if event.image %}
+                    <img src="{{event.image.url}}" class="card-img-top w-100" style="height: 400px;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{event.title}}</h5>
+                        <p class="card-text">{{event.description}} <br>
+                            <b>{{event.date}}</b>
+                        </p>
+                        <a href="/eventregister" type="submit"
+                            class="btn btn-danger shadow-none me-lg-3 me-3">REGISTER</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,33 @@
+{% extends 'Dashboard/navbar.html' %}
+{% block body %}
+<style>
+    .profile-pic{
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+
+    }
+</style>
+<div class="row px-5">
+    <div class="col-md-5 mb-3 mt-4 my-2">
+        <div class="card card-body">
+            <h3 style="text-align: center;">Account Settings</h3>
+            <hr>
+            <img class="profile-pic" src="{{request.user.student.profile_pic.url}}">
+            <a href="/userprofile" class="btn btn-warning mt-3">Back to Profile</a>
+        </div>
+    </div>
+    <div class="col-md-5 mb-3 mt-4">
+        <div class="card card-body">
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-primary shadow-none">Update</button>
+                
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}

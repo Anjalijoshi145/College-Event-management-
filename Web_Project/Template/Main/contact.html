@@ -1,0 +1,89 @@
+{% extends 'Main/main.html' %}
+{% block body %}
+<div class="my-5 px-4">
+  <h2 class="fw-bold text-center h-font"><u>Contact Us</u></h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 mb-5 px-4">
+      <div class="bg-white rounded shadow p-4">
+        <iframe class=" w-100 rounded mb-4" height="320px"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d447666.83843504393!2d76.1816926734375!3d28.767410200000025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d9e21888ac8ed%3A0xb6f903d5ef7d8eea!2sMERI%20College%20Of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1689609141044!5m2!1sen!2sin"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h5>Address</h5>
+        <a href="https://maps.app.goo.gl/SKLkzagvzcJjRYkf6" target="_blank"
+          class="d-inline-block text-decoration-none text-dark mb-2"><i class="bi bi-geo-alt-fill">
+          </i> <b>MERI College Of Engineering and Technology</b> <br> Milestone Rohtak Road (near sampla, Bahadurgarh,
+          Haryana 124501)</a>
+        <a>
+          <H5 class="mt-3">Call us</H5>
+          <a href="tel:+918010774968" class="d-inline-block mb-2 text-decoration-none text-dark">
+            <i class="bi bi-telephone-fill"></i> +918010774968
+          </a>
+          <br>
+          <a href="tel:+918010774968" class="d-inline-block mb-2 text-decoration-none text-dark">
+            <i class="bi bi-telephone-fill"></i> +918010774968
+          </a>
+        </a>
+        <h5 class="mt-3">E-mail</h5>
+        <a href="mailto:ask.aj234979@gmail.com" class="d-inline-block mb-2 text-decoration-none text-dark">
+          <i class="bi bi-envelope-fill"></i> abc23@gmail.com</a>
+        <H5 class="mt-3">Follow us</H5>
+        <a href="#" class="d-inline-block text-dark fs-5 me-2">
+          <i class="bi bi-twitter me-1"></i>
+        </a>
+        <a href="#" class="d-inline-block text-dark fs-5 me-2">
+          <i class="bi bi-facebook me-1"></i>
+        </a>
+        <a href="#" class="d-inline-block text-dark fs-5">
+          <i class="bi bi-instagram me-1"></i>
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 mb-5 px-4">
+      <div class="bg-white rounded shadow p-4">
+        <form method="post" action="/contact">
+          {% csrf_token %}
+          <h5>Send a message</h5>
+          <div class="mt-4">
+            <label for="name" class="form-label" style="font-weight: 500;">Name</label>
+            <input type="text" class="form-control" name="name" id="name">
+          </div>
+          <div class="mt-4">
+            <label for="email" class="form-label" style="font-weight: 500;">Email</label>
+            <input type="email" class="form-control" name="email" id="email">
+          </div>
+          <div class="mt-4">
+            <label for="subject" class="form-label" style="font-weight: 500;">Subject</label>
+            <input type="text" class="form-control" name="subject" id="subject">
+          </div>
+          <div class="mt-4">
+            <label for="message" class="form-label" style="font-weight: 500;">Message</label>
+            <textarea class="form-control shadow-none" name="message" id="message" rows="12" style="resize: none;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success mt-4">SEND</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--backend wala form hai django mein
+<form method="post" action="/contact">
+  {% csrf_token %}
+  <div class="mb-3 mx-5">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" id="email">
+  </div>
+  <div class="mb-3 mx-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+-->
+
+
+
+
+{% endblock body %}
